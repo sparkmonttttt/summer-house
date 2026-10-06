@@ -1,5 +1,5 @@
 // Summer House — Ayan & Jenny
-// Full explicit adult visual novel demo
+// Full explicit adult visual novel – interactive thrusting & actions
 
 const scenes = {
   start: {
@@ -32,10 +32,10 @@ const scenes = {
 
   kitchen_scene: {
     bg: "kitchen",
+    chars: [{name: "jenny-bent", pos: "right", anim: "bounce"}, {name: "ayan-standing", pos: "left"}],
     speaker: "",
     text: "You step into the kitchen and freeze.\n\nJenny is bent over the counter, purple shirt hiked up, panties around her thighs. Her ass is shiny with cum, more still dripping down her legs onto the floor.",
-    next: "kitchen_jenny_notice",
-    explicit: true
+    next: "kitchen_jenny_notice"
   },
 
   kitchen_jenny_notice: {
@@ -103,76 +103,252 @@ const scenes = {
     speaker: "Jenny",
     text: "Well? What are you going to do, roommate?",
     choices: [
-      { text: "Fuck her right there over the counter", next: "fuck_counter" },
-      { text: "Make her clean it up with her mouth", next: "clean_mouth" },
-      { text: "Tell her to get on her knees", next: "on_knees" }
+      { text: "Fuck her right there over the counter", next: "sex_start_counter" },
+      { text: "Make her clean it up with her mouth", next: "sex_start_mouth" },
+      { text: "Tell her to get on her knees", next: "sex_start_knees" }
     ]
   },
 
-  fuck_counter: {
+  sex_start_counter: {
     bg: "kitchen",
+    chars: [{name: "jenny-bent", pos: "right", anim: "thrust"}, {name: "ayan-thrust", pos: "left", anim: "thrust"}],
     speaker: "",
-    text: "You free your cock and push into her in one smooth thrust. She's still dripping and loose from the previous guy — the wet heat is overwhelming. Jenny moans loudly as you start pounding her against the counter.",
-    next: "fuck_counter2",
-    explicit: true
+    text: "You free your cock and push into her in one smooth thrust. She's still dripping and loose from the previous guy — the wet heat is overwhelming. Jenny moans loudly.",
+    next: "sex_counter_loop"
   },
 
-  fuck_counter2: {
+  sex_counter_loop: {
+    bg: "kitchen",
+    chars: [{name: "jenny-bent", pos: "right", anim: "thrust"}, {name: "ayan-thrust", pos: "left", anim: "thrust"}],
+    speaker: "Jenny",
+    text: "F-fuck... you're so deep already... His cum is squishing out around your cock...",
+    choices: [
+      { text: "Thrust harder", next: "sex_counter_hard" },
+      { text: "Slow deep strokes", next: "sex_counter_slow" },
+      { text: "Spank her ass while fucking", next: "sex_counter_spank" },
+      { text: "Grab her hair and pound her", next: "sex_counter_hair" },
+      { text: "I'm about to cum...", next: "fuck_climax" }
+    ]
+  },
+
+  sex_counter_hard: {
+    bg: "kitchen",
+    chars: [{name: "jenny-bent", pos: "right", anim: "hard"}, {name: "ayan-thrust", pos: "left", anim: "hard"}],
+    speaker: "",
+    text: "You slam into her harder. The wet slap of skin fills the kitchen. Jenny's body jerks forward with every thrust, her tits pressing against the cold counter.",
+    next: "sex_counter_hard2"
+  },
+
+  sex_counter_hard2: {
     bg: "kitchen",
     speaker: "Jenny",
-    text: "F-fuck yes! Harder! Use me... I don't care that his cum is still inside... just fill me up again!",
-    next: "fuck_counter3"
+    text: "Yes! Harder! Break me! I don't care if the neighbors hear!",
+    next: "sex_counter_loop"
   },
 
-  fuck_counter3: {
+  sex_counter_slow: {
     bg: "kitchen",
+    chars: [{name: "jenny-bent", pos: "right", anim: "bounce"}, {name: "ayan-thrust", pos: "left", anim: "bounce"}],
     speaker: "",
-    text: "The kitchen fills with the wet slap of skin and Jenny's desperate moans. You grip her hips hard, watching your cock disappear into her messy cunt over and over.",
-    next: "fuck_climax"
+    text: "You slow down, dragging your cock almost all the way out before sliding back in deep. You can feel every ridge of her used pussy gripping you.",
+    next: "sex_counter_slow2"
   },
 
-  clean_mouth: {
+  sex_counter_slow2: {
     bg: "kitchen",
+    speaker: "Jenny",
+    text: "Mmm... teasing me... You're making me feel every inch... Keep doing that...",
+    next: "sex_counter_loop"
+  },
+
+  sex_counter_spank: {
+    bg: "kitchen",
+    chars: [{name: "jenny-bent", pos: "right", anim: "hard"}, {name: "ayan-thrust", pos: "left", anim: "thrust"}],
     speaker: "",
-    text: "You turn her around and push her down. \"Clean it,\" you say. Jenny doesn't hesitate — she drops to her knees and starts licking the cum from your cock and her own thighs, eyes looking up at you the whole time.",
-    next: "clean_mouth2",
-    explicit: true
+    text: "You bring your hand down hard on her ass. The wet smack echoes. Jenny yelps, her pussy clenching around you as a fresh wave of the previous guy's cum squeezes out.",
+    next: "sex_counter_spank2"
   },
 
-  clean_mouth2: {
+  sex_counter_spank2: {
     bg: "kitchen",
+    speaker: "Jenny",
+    text: "Ah! Do it again! Spank your roommate's messy ass while you fuck her!",
+    next: "sex_counter_loop"
+  },
+
+  sex_counter_hair: {
+    bg: "kitchen",
+    chars: [{name: "jenny-bent", pos: "right", anim: "hard"}, {name: "ayan-thrust", pos: "left", anim: "hard"}],
+    speaker: "",
+    text: "You fist her brown hair and yank her head back, pounding her ruthlessly. Her back arches, mouth open in a silent scream of pleasure.",
+    next: "sex_counter_hair2"
+  },
+
+  sex_counter_hair2: {
+    bg: "kitchen",
+    speaker: "Jenny",
+    text: "Guh... fuck... use me like a toy... Don't stop...",
+    next: "sex_counter_loop"
+  },
+
+  sex_start_mouth: {
+    bg: "kitchen",
+    chars: [{name: "jenny-knees", pos: "center"}, {name: "ayan-standing", pos: "left"}],
+    speaker: "",
+    text: "You turn her around and push her down. \"Clean it,\" you say. Jenny drops to her knees and starts licking the cum from your cock and her own thighs, eyes looking up at you.",
+    next: "sex_mouth_loop"
+  },
+
+  sex_mouth_loop: {
+    bg: "kitchen",
+    chars: [{name: "jenny-knees", pos: "center", anim: "bounce"}, {name: "ayan-standing", pos: "left"}],
     speaker: "Jenny",
     text: "Mmph... tastes so dirty... You like watching your roommate clean herself like a slut, don't you?",
-    next: "clean_mouth3"
+    choices: [
+      { text: "Facefuck her", next: "sex_mouth_facefuck" },
+      { text: "Make her deepthroat", next: "sex_mouth_deep" },
+      { text: "Hold her head still and thrust", next: "sex_mouth_thrust" },
+      { text: "Pull out and slap her face with it", next: "sex_mouth_slap" },
+      { text: "I'm about to cum...", next: "fuck_climax" }
+    ]
   },
 
-  clean_mouth3: {
+  sex_mouth_facefuck: {
     bg: "kitchen",
+    chars: [{name: "jenny-knees", pos: "center", anim: "bounce"}, {name: "ayan-standing", pos: "left", anim: "idle"}],
     speaker: "",
-    text: "She takes you into her mouth, sucking hungrily while her fingers play with the cum still leaking from her pussy.",
-    next: "fuck_climax"
+    text: "You grab both sides of her head and start thrusting into her mouth. Jenny gags wetly but keeps her hands on your thighs, letting you use her face.",
+    next: "sex_mouth_facefuck2"
   },
 
-  on_knees: {
-    bg: "kitchen",
-    speaker: "",
-    text: "\"On your knees.\" Jenny drops immediately, looking up at you with flushed cheeks and messy hair. You slap your cock against her lips.",
-    next: "on_knees2",
-    explicit: true
-  },
-
-  on_knees2: {
+  sex_mouth_facefuck2: {
     bg: "kitchen",
     speaker: "Jenny",
-    text: "Please... use my mouth. I want to taste you while I'm still full of someone else's cum...",
-    next: "on_knees3"
+    text: "*glk* *glk* *glk*  ...hnnn...",
+    next: "sex_mouth_loop"
   },
 
-  on_knees3: {
+  sex_mouth_deep: {
+    bg: "kitchen",
+    chars: [{name: "jenny-knees", pos: "center", anim: "bounce"}, {name: "ayan-standing", pos: "left", anim: "idle"}],
+    speaker: "",
+    text: "You push all the way in until her nose presses against your stomach. Her throat bulges. Tears form in her eyes as she tries to swallow around you.",
+    next: "sex_mouth_deep2"
+  },
+
+  sex_mouth_deep2: {
+    bg: "kitchen",
+    speaker: "Jenny",
+    text: "*ghhhk*  ...mmph...!",
+    next: "sex_mouth_loop"
+  },
+
+  sex_mouth_thrust: {
+    bg: "kitchen",
+    chars: [{name: "jenny-knees", pos: "center", anim: "bounce"}, {name: "ayan-standing", pos: "left", anim: "idle"}],
+    speaker: "",
+    text: "You hold her head firmly and fuck her mouth with steady, deep strokes. Drool and leftover cum drip down her chin onto her purple shirt.",
+    next: "sex_mouth_thrust2"
+  },
+
+  sex_mouth_thrust2: {
+    bg: "kitchen",
+    speaker: "Jenny",
+    text: "*slurp*  ...use my throat... it's yours...",
+    next: "sex_mouth_loop"
+  },
+
+  sex_mouth_slap: {
+    bg: "kitchen",
+    chars: [{name: "jenny-knees", pos: "center", anim: "bounce"}, {name: "ayan-standing", pos: "left", anim: "idle"}],
+    speaker: "",
+    text: "You pull out and slap your wet cock across her cheeks and lips. Jenny sticks her tongue out, trying to catch it, looking completely ruined.",
+    next: "sex_mouth_slap2"
+  },
+
+  sex_mouth_slap2: {
+    bg: "kitchen",
+    speaker: "Jenny",
+    text: "Yes... treat me like a dirty toy... I love it...",
+    next: "sex_mouth_loop"
+  },
+
+  sex_start_knees: {
+    bg: "kitchen",
+    chars: [{name: "jenny-knees", pos: "center"}, {name: "ayan-standing", pos: "left"}],
+    speaker: "",
+    text: "\"On your knees.\" Jenny drops immediately, looking up at you with flushed cheeks and messy hair. You slap your cock against her lips.",
+    next: "sex_knees_loop"
+  },
+
+  sex_knees_loop: {
+    bg: "kitchen",
+    chars: [{name: "jenny-knees", pos: "center", anim: "bounce"}, {name: "ayan-standing", pos: "left"}],
+    speaker: "Jenny",
+    text: "Please... use my mouth. I want to taste you while I'm still full of someone else's cum...",
+    choices: [
+      { text: "Fuck her face hard", next: "sex_knees_hard" },
+      { text: "Make her worship your cock", next: "sex_knees_worship" },
+      { text: "Pull her hair and thrust deep", next: "sex_knees_hair" },
+      { text: "Stand up and make her follow with her mouth", next: "sex_knees_follow" },
+      { text: "I'm about to cum...", next: "fuck_climax" }
+    ]
+  },
+
+  sex_knees_hard: {
     bg: "kitchen",
     speaker: "",
-    text: "You fuck her face roughly, holding her hair. Tears form at the corners of her eyes but she never stops sucking, one hand between her legs.",
-    next: "fuck_climax"
+    text: "You hold her hair and start fucking her face roughly. The wet sounds of her throat being used fill the kitchen. Her eyes water but she never pulls away.",
+    next: "sex_knees_hard2"
+  },
+
+  sex_knees_hard2: {
+    bg: "kitchen",
+    speaker: "Jenny",
+    text: "*ghhk-ghhk-ghhk*",
+    next: "sex_knees_loop"
+  },
+
+  sex_knees_worship: {
+    bg: "kitchen",
+    speaker: "",
+    text: "Jenny licks from your balls all the way up the shaft, kissing the tip, then taking you back into her warm mouth. She looks up at you the whole time.",
+    next: "sex_knees_worship2"
+  },
+
+  sex_knees_worship2: {
+    bg: "kitchen",
+    speaker: "Jenny",
+    text: "Your cock tastes so much better than his... I want to be your personal cockslut...",
+    next: "sex_knees_loop"
+  },
+
+  sex_knees_hair: {
+    bg: "kitchen",
+    speaker: "",
+    text: "You yank her hair and force yourself deep. Jenny's hands grip your legs as you use her throat like a sleeve.",
+    next: "sex_knees_hair2"
+  },
+
+  sex_knees_hair2: {
+    bg: "kitchen",
+    speaker: "Jenny",
+    text: "*glurk*  ...more...",
+    next: "sex_knees_loop"
+  },
+
+  sex_knees_follow: {
+    bg: "kitchen",
+    speaker: "",
+    text: "You stand up straighter. Jenny crawls forward on her knees, keeping her mouth on your cock, following every movement like a trained pet.",
+    next: "sex_knees_follow2"
+  },
+
+  sex_knees_follow2: {
+    bg: "kitchen",
+    speaker: "Jenny",
+    text: "I'll follow you anywhere as long as I can keep sucking...",
+    next: "sex_knees_loop"
   },
 
   fuck_climax: {
@@ -187,7 +363,7 @@ const scenes = {
     speaker: "",
     text: "Where do you finish?",
     choices: [
-      { text: "Deep inside her", next: "cum_inside" },
+      { text: "Deep inside her (or her throat)", next: "cum_inside" },
       { text: "All over her face and tits", next: "cum_face" },
       { text: "Pull out and cover her ass", next: "cum_ass" }
     ]
@@ -196,25 +372,22 @@ const scenes = {
   cum_inside: {
     bg: "kitchen",
     speaker: "",
-    text: "You bury yourself to the hilt and unload hard. Jenny cries out as she feels your hot cum mixing with the load already inside her. Her legs shake as she cums again from the feeling of being filled a second time.",
-    next: "aftercare",
-    explicit: true
+    text: "You bury yourself as deep as you can and unload hard. Jenny cries out (or gags) as she feels your hot cum flooding her. Her body shakes as she cums from the feeling of being filled again.",
+    next: "aftercare"
   },
 
   cum_face: {
     bg: "kitchen",
     speaker: "",
     text: "You pull out and stroke yourself over her face. Thick ropes of cum land across her cheeks, lips, and the top of her tits. Jenny sticks her tongue out, catching some of it, looking completely ruined.",
-    next: "aftercare",
-    explicit: true
+    next: "aftercare"
   },
 
   cum_ass: {
     bg: "kitchen",
     speaker: "",
     text: "You pull out and aim at her ass. Your cum paints her soft cheeks and runs down into the crack, mixing with everything already there. Jenny reaches back and spreads herself for you, showing off the mess.",
-    next: "aftercare",
-    explicit: true
+    next: "aftercare"
   },
 
   aftercare: {
@@ -234,7 +407,7 @@ const scenes = {
   end_demo: {
     bg: "kitchen",
     speaker: "",
-    text: "— End of Demo Scene —\n\nThis is just the starting kitchen scene. More locations, characters, and routes can be added next (bedroom, living room, more of Jenny's story, new girls, etc.).\n\nThanks for playing.",
+    text: "— End of Demo Scene —\n\nYou can keep thrusting and choosing actions as long as you want during the sex scenes.\n\nMore locations and girls can be added next.",
     choices: [
       { text: "Play again from the beginning", next: "start" },
       { text: "Return to title", next: "title" }
@@ -276,6 +449,20 @@ function renderScene(id) {
   gameState.scene = id;
   showScreen("game-screen");
   setBackground(scene.bg || "kitchen");
+
+  // Characters
+  const charsEl = $("#characters");
+  charsEl.innerHTML = "";
+  if (scene.chars) {
+    scene.chars.forEach(c => {
+      const img = document.createElement("img");
+      img.src = c.src || "assets/" + c.name + ".png";
+      img.alt = c.name;
+      img.className = "character " + (c.pos || "") + (c.anim ? " " + c.anim : "");
+      img.onerror = () => { img.style.display = "none"; };
+      charsEl.appendChild(img);
+    });
+  }
 
   const speakerEl = $("#speaker");
   const textEl = $("#text");
