@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summer House — Ayan & Jenny</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game">
+    <!-- Title Screen -->
+    <div id="title-screen" class="screen active">
+      <div class="title-content">
+        <h1>Summer House</h1>
+        <p class="subtitle">An adult visual novel</p>
+        <p class="mc">Starring Ayan</p>
+        <button id="start-btn" class="btn primary">Start Game</button>
+        <p class="disclaimer">18+ only • Full explicit content</p>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+      <div id="background"></div>
+      <div id="characters"></div>
+      
+      <div id="dialogue-box">
+        <div id="speaker"></div>
+        <div id="text"></div>
+        <div id="choices"></div>
+        <div id="continue-hint">Click to continue ▸</div>
+      </div>
+
+      <div id="ui-bar">
+        <button id="save-btn" class="btn small">Save</button>
+        <button id="load-btn" class="btn small">Load</button>
+        <button id="menu-btn" class="btn small">Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
