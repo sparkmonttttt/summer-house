@@ -450,16 +450,14 @@ function renderScene(id) {
   showScreen("game-screen");
   setBackground(scene.bg || "kitchen");
 
-  // Characters
   const charsEl = $("#characters");
   charsEl.innerHTML = "";
   if (scene.chars) {
     scene.chars.forEach(c => {
       const img = document.createElement("img");
-      img.src = c.src || "assets/" + c.name + ".png";
+      img.src = c.src || "assets/" + c.name + ".svg";
       img.alt = c.name;
       img.className = "character " + (c.pos || "") + (c.anim ? " " + c.anim : "");
-      img.onerror = () => { img.style.display = "none"; };
       charsEl.appendChild(img);
     });
   }
